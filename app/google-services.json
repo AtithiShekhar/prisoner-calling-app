@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506551974373",
+    "project_id": "prisoner-calling-system",
+    "storage_bucket": "prisoner-calling-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506551974373:android:43967accaa920171aa570c",
+        "android_client_info": {
+          "package_name": "com.example.prisonercalling"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtofRPWss-GZCpMvV9Gvv7r-ml1S089ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
