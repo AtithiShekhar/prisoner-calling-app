@@ -27,11 +27,7 @@ fun SplashScreen(navController: NavHostController) {
                 launchSingleTop = true
             }
         } catch (e: Exception) {
-            Log.e("PrisonCalling", "Navigation error: ${e.message}", e)
-        }
-    }
-    // ... rest of the code
-
+            Log.e("PrisonCalling", "Navigation error: ${e.message}", e) } }
 
     Column(
         modifier = Modifier
@@ -58,7 +54,4 @@ fun SplashScreen(navController: NavHostController) {
             text = "System",
             fontSize = 24.sp,
             fontWeight = FontWeight.Light,
-            color = Color(0xFF1976D2).copy(alpha = 0.9f)
-        )
-    }
-}
+            color = Color(0xFF1976D2).copy(alpha = 0.9f)) } }

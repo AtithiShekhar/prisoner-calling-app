@@ -76,11 +76,7 @@ fun LoginSelectionScreen(navController: NavHostController) {
                     Text(
                         text = "Access administrative features",
                         fontSize = 14.sp,
-                        color = Color.Gray
-                    )
-                }
-            }
-        }
+                        color = Color.Gray) } } }
         Spacer(modifier = Modifier.height(16.dp))
         Card(
             modifier = Modifier
@@ -112,10 +108,4 @@ fun LoginSelectionScreen(navController: NavHostController) {
                     Text(
                         text = "View your information",
                         fontSize = 14.sp,
-                        color = Color.Gray
-                    )
-                }
-            }
-        }
-    }
-}
+                        color = Color.Gray) } } } } }

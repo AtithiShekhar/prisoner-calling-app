@@ -39,9 +39,7 @@ fun AddOptionsScreen(navController: NavHostController) {
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color(0xFF1976D2),
-            modifier = Modifier.padding(bottom = 16.dp)
-        )
-
+            modifier = Modifier.padding(bottom = 16.dp))
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -71,10 +69,7 @@ fun AddOptionsScreen(navController: NavHostController) {
                         text = "Create new admin account",
                         fontSize = 14.sp,
                         color = Color.Gray
-                    )
-                }
-            }
-        }
+                    ) } } }
 
         Card(
             modifier = Modifier
@@ -104,10 +99,4 @@ fun AddOptionsScreen(navController: NavHostController) {
                     Text(
                         text = "Register new prisoner",
                         fontSize = 14.sp,
-                        color = Color.Gray
-                    )
-                }
-            }
-        }
-    }
-}
+                        color = Color.Gray) } } } } }

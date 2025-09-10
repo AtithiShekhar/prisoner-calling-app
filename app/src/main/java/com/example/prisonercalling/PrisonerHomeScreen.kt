@@ -34,9 +34,7 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
             .get()
             .addOnSuccessListener { documents ->
                 if (!documents.isEmpty) {
-                    prisonerInfo = documents.first().toObject(Prisoner::class.java)
-                }
-            }
+                    prisonerInfo = documents.first().toObject(Prisoner::class.java) } }
         db.collection("receivers")
             .whereEqualTo("prisonerCardNumber", cardNumber)
             .get()
@@ -47,10 +45,7 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                 isLoading = false
             }
             .addOnFailureListener {
-                isLoading = false
-            }
-    }
-
+                isLoading = false } }
     Scaffold(
         topBar = {
             TopAppBar(

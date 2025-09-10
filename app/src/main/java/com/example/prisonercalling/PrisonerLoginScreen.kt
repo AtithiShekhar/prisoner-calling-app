@@ -141,19 +141,13 @@ fun PrisonerLoginScreen(navController: NavHostController) {
                             color = Color.White
                         )
                     } else {
-                        Text("Login", fontSize = 16.sp)
-                    }
-                }
-
+                        Text("Login", fontSize = 16.sp) } }
                 if (message.isNotEmpty()) {
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
                         text = message,
                         color = MaterialTheme.colorScheme.error,
-                        textAlign = TextAlign.Center
-                    )
-                }
-
+                        textAlign = TextAlign.Center) }
                 Spacer(modifier = Modifier.height(16.dp))
 
                 TextButton(

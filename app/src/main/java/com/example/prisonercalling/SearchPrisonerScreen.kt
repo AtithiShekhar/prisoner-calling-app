@@ -125,10 +125,7 @@ fun PrisonerCard(prisoner: Prisoner) {
                 Text(
                     text = "Card: ${prisoner.cardNumber}",
                     fontSize = 12.sp,
-                    color = Color.Gray
-                )
-            }
-
+                    color = Color.Gray) }
             Spacer(modifier = Modifier.height(8.dp))
 
             Text("Name: ${prisoner.prisonerName}", fontWeight = FontWeight.Medium)
