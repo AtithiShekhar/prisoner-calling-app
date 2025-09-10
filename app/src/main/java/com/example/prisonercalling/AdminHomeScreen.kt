@@ -3,6 +3,7 @@ package com.example.prisonercalling
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -13,7 +14,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
-// AdminHomeScreen.kt
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AdminHomeScreen(mainNavController: NavHostController) {
@@ -38,10 +38,7 @@ fun AdminHomeScreen(mainNavController: NavHostController) {
                     onClick = {
                         selectedTab = 0
                         navController.navigate("search") {
-                            popUpTo("search") { inclusive = true }
-                        }
-                    }
-                )
+                            popUpTo("search") { inclusive = true } } })
                 NavigationBarItem(
                     icon = {
                         Icon(
@@ -54,12 +51,7 @@ fun AdminHomeScreen(mainNavController: NavHostController) {
                     onClick = {
                         selectedTab = 1
                         navController.navigate("add_options") {
-                            popUpTo("add_options") { inclusive = true }
-                        }
-                    }
-                )
-            }
-        },
+                            popUpTo("add_options") { inclusive = true } } }) } },
         topBar = {
             TopAppBar(
                 title = { Text("Admin Dashboard", color = Color.White) },
@@ -70,19 +62,11 @@ fun AdminHomeScreen(mainNavController: NavHostController) {
                     IconButton(
                         onClick = {
                             mainNavController.navigate("login_selection") {
-                                popUpTo(0) { inclusive = true }
-                            }
-                        }
-                    ) {
+                                popUpTo(0) { inclusive = true } } }) {
                         Icon(
-                            Icons.Default.Add,
+                            Icons.Default.ExitToApp,
                             contentDescription = "Logout",
-                            tint = Color.White
-                        )
-                    }
-                }
-            )
-        }
+                            tint = Color.White) } }) }
     ) { paddingValues ->
         NavHost(
             navController = navController,

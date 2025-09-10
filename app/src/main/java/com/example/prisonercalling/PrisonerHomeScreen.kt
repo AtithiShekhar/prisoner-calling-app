@@ -29,7 +29,6 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
     val db = FirebaseFirestore.getInstance()
 
     LaunchedEffect(cardNumber) {
-        // Get prisoner info
         db.collection("prisoners")
             .whereEqualTo("cardNumber", cardNumber)
             .get()
@@ -38,8 +37,6 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                     prisonerInfo = documents.first().toObject(Prisoner::class.java)
                 }
             }
-
-        // Get family members from receivers collection
         db.collection("receivers")
             .whereEqualTo("prisonerCardNumber", cardNumber)
             .get()
@@ -70,19 +67,11 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                     IconButton(
                         onClick = {
                             navController.navigate("login_selection") {
-                                popUpTo(0) { inclusive = true }
-                            }
-                        }
-                    ) {
+                                popUpTo(0) { inclusive = true } } }) {
                         Icon(
                             Icons.Default.Delete,
                             contentDescription = "Logout",
-                            tint = Color.White
-                        )
-                    }
-                }
-            )
-        }
+                            tint = Color.White) } }) }
     ) { paddingValues ->
         if (isLoading) {
             Box(
@@ -98,9 +87,7 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
-                    .padding(16.dp)
-            ) {
-                // Prisoner Info Card
+                    .padding(16.dp)) {
                 prisonerInfo?.let { prisoner ->
                     Card(
                         modifier = Modifier.fillMaxWidth(),
@@ -117,10 +104,7 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                             Text("ID: ${prisoner.prisonerId}")
                             Text("Card Number: ${prisoner.cardNumber}")
                             Text("Admission Date: ${prisoner.admissionDate}")
-                            Text("Balance: ₹${prisoner.amount}")
-                        }
-                    }
-                }
+                            Text("Balance: ₹${prisoner.amount}") } } }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -147,23 +131,13 @@ fun PrisonerHomeScreen(navController: NavHostController, cardNumber: String) {
                             Text(
                                 text = "No family members added yet",
                                 color = Color.Gray,
-                                textAlign = TextAlign.Center
-                            )
-                        }
-                    }
+                                textAlign = TextAlign.Center) } }
                 } else {
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         items(familyMembers) { member ->
-                            FamilyMemberCard(member)
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+                            FamilyMemberCard(member) } } } } } } }
 
 @Composable
 fun FamilyMemberCard(member: Receiver) {
@@ -197,21 +171,12 @@ fun FamilyMemberCard(member: Receiver) {
                 )
             }
             IconButton(
-                onClick = { /* Handle call action */ }
+                onClick = { /* call functionality */ }
             ) {
                 Icon(
                     imageVector = Icons.Default.Call,
                     contentDescription = "Call",
-                    tint = Color(0xFF4CAF50)
-                )
-            }
-        }
-    }
-}
-
-
-
-
+                    tint = Color(0xFF4CAF50)) } } } }
 data class FamilyMember(
     val name: String,
     val number: String

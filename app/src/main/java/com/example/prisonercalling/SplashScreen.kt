@@ -19,16 +19,21 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavHostController) {
-    Log.d("PrisonCalling", "SplashScreen composed")
     LaunchedEffect(Unit) {
-        delay(3000)
-        navController.navigate("login_selection") {
-            popUpTo("splash") { inclusive = true }
-            launchSingleTop = true
+        try {
+            delay(3000)
+            navController.navigate("login_selection") {
+                popUpTo("splash") { inclusive = true }
+                launchSingleTop = true
+            }
+        } catch (e: Exception) {
+            Log.e("PrisonCalling", "Navigation error: ${e.message}", e)
         }
     }
+    // ... rest of the code
 
-    Column( // Changed from Box
+
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White),
